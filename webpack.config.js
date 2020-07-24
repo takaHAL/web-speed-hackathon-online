@@ -4,6 +4,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -33,6 +34,7 @@ module.exports = {
     rules: [
       {
         test: /\.m?jsx?$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
@@ -40,7 +42,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpe?g|gif)$/,
         use: {
-          loader: 'url-loader',
+          loader: 'file-loader',
         },
       },
     ],
@@ -48,7 +50,7 @@ module.exports = {
 
   target: 'web',
 
-  devtool: 'inline-source-map',
+  devtool: NODE_ENV === 'production' ? false : 'inline-source-map',
 
-  mode: 'none',
+  mode: 'production',
 };
