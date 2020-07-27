@@ -29,7 +29,3 @@
 .blog-list-BlogCardList__column {
   padding-right: calc(var(--space) * 2);
 }
-
-.blog-list-BlogCardList__item {
-  padding-right: calc(var(--space) * 2);
-}
