@@ -11,6 +11,13 @@
   transform: translateX(-50%);
 }
 
+.blog-BlogHeader {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #eee;
+}
+
 .blog-BlogHeader__contents {
   position: absolute;
   top: 50%;
